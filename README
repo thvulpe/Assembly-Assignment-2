@@ -1,0 +1,25 @@
+Tema realizata de Theodor Vulpe - 315CB
+
+Task 1:
+
+Adaug in array-ul destinatie doar numerele care indeplinesc conditiile. Pentru a verifica daca un numar x este putere a lui 2, folosesc proprietatea ca x & (x-1) = 0
+
+Task 2:
+
+- subtask 1:
+
+Verific daca anul, respectiv luna se afla in intervalele corecte, iar in caz contrar sar la un label specific invalid_date. Pentru a verifica daca ziua este corecta, aflu prima data luna corespunzatoare numarului ei si numarul sau de zile.
+
+- subtask 2:
+
+Asemanator codului corespunzator in C, folosesc doua loop-uri, iar ambele au cate ecx pasi (ecx fiind lungimea array-ului). Pentru a interschimba doua evenimente, ma folosesc de faptul ca dimensiunea structurii este de 36 bytes, care este divizibil cu 4, deci pot interschimba cate un dword o data, de 9 ori in total. Pentru a compara numele a doua evenimente, fac un loop prin care trec prin fiecare pereche de caractere pana trebuie facut swap sau se ajunge la final. 
+
+Task 3: Initial aflu numarul de grupari de cate 3 bytes. Apoi calculez lungimea destinatiei si o pun in pointerul dat. Intr-un loop, iau fiecare grup de 3 bytes si formez noua grupare shiftand de fiecare data bitii la stanga pentru a face loc noului caracter. Dupa ce am format noua grupare, pentru fiecare din cele 4 perechi de cate 6 biti, shiftez la dreapta pentru a obtine grupa dorita si o izolez folosind o masca. Adaug fiecare caracter encodat la destinatie.
+
+Task 4: Folosesc doua loop-uri, unul care trece prin toate cifrele de la 1 la 9 iar celalalt care cauta cifra pe rand/coloana. Cand am gasit cifra in cel de-al doilea loop, verific daca este marcata ca deja gasita. In caz afirmativ, inseamna ca avem o dublura si randul/coloana este gresit/a. La finalul cautarii unei cifre, daca nu a fost gasita deloc, din nou, este gresit. Diferenta dintre implementarea check_row si check_column consta in faptul ca la check_row obtin de la inceput un pointer catre inceputul randului respectiv pentru a usura operatiile, iar la check_column inmultesc de fiecare data linia curenta cu numarul de coloane si adaug coloana respectiva pentru a obtine cifra curenta. Nu am abordat check_box.
+
+
+
+
+
+
