@@ -2,7 +2,7 @@
 
 Assembly-based solutions to low-level computing problems, designed to deepen understanding of memory access, bitwise manipulation, control flow, and performance-oriented logic using x86 instructions.
 
-📄 **Assignment repository:** https://gitlab.cs.pub.ro/iocla/tema-2-2025  
+📄 **Assignment repository:** [gitlab.cs.pub.ro/iocla/tema-2-2025](https://gitlab.cs.pub.ro/iocla/tema-2-2025)  
 👨‍💻 **Author:** Theodor Vulpe – 315CB
 
 ---
@@ -14,9 +14,8 @@ Assembly-based solutions to low-level computing problems, designed to deepen und
 Store only those values from a source array into a destination array **if they are powers of two**.
 
 - Uses the bitwise identity:  
-x & (x - 1) == 0 ⟹ x is a power of 2
-
-- Skips zero explicitly, since 0 & -1 == 0 but 0 is not a power of 2.
+  `x & (x - 1) == 0 ⟹ x is a power of 2`
+- Skips zero explicitly, since `0 & -1 == 0`, but 0 is **not** a power of 2.
 
 ---
 
@@ -25,34 +24,37 @@ x & (x - 1) == 0 ⟹ x is a power of 2
 #### 📅 Subtask 1: Validate Date
 
 - Validates year and month using range checks.
-- Uses `invalid_date` label for any invalid component.
-- Looks up the maximum number of days based on the month.
-- Checks that the day fits within that range.
+- Uses `invalid_date` label for invalid components.
+- Looks up the number of days in each month.
+- Verifies the day is within the valid range.
 
 #### 🔁 Subtask 2: Sort Events by Name
 
-- Implements a **bubble sort**-style double loop.
-- Uses `ecx` for array length.
-- Each event struct is **36 bytes**, allowing safe `DWORD` (4-byte) swapping in 9 steps.
-- Compares event names character-by-character to determine sort order.
+- Implements a **bubble sort** with two nested loops.
+- `ecx` holds the number of events.
+- Each event is 36 bytes → swapped in 9 `dword` steps.
+- Compares names character by character to determine order.
 
 ---
 
-### 🔹 Task 3 – Base64 Encoding (Manual Implementation)
+### 🔹 Task 3 – Base64 Encoding
 
-- Computes number of 3-byte groups to encode.
-- Constructs each 24-bit group by shifting and combining 3 input bytes.
-- Splits 24-bit group into four 6-bit values via right shifts and masks.
-- Encodes each 6-bit value as its corresponding Base64 character.
-- Writes result into destination array and stores final size via pointer.
+- Calculates the number of 3-byte groups.
+- Combines them into 24-bit chunks via left shifts.
+- Extracts four 6-bit segments from each chunk using right shifts and masks.
+- Maps each segment to its corresponding Base64 character.
+- Writes the encoded string to the destination buffer.
 
 ---
 
 ### 🔹 Task 4 – Sudoku Row & Column Checker
 
-- Iterates digits 1–9 for each row/column.
-- For each digit, checks if it appears **exactly once**.
-- Uses a flag array to track duplicates.
-- If digit is missing or duplicated → row/column is invalid.
-- `check_row`: computes row pointer once.
-- `check_column`: computes index dynamically via `(row * cols + col)`.
+- Iterates over digits `1` to `9` for each row or column.
+- For each digit:
+  - Checks if it appears **exactly once**.
+  - Uses a flag array to track duplicates.
+- If a digit is missing or repeated → row/column is invalid.
+- `check_row` computes a row pointer once.
+- `check_column` calculates each cell address using:  
+  `row * cols + col`
+
