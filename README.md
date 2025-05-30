@@ -1,5 +1,3 @@
-# 🧩 IOCLA – Tema 2 (2025)
-
 Assembly-based solutions to low-level computing problems, designed to deepen understanding of memory access, bitwise manipulation, control flow, and performance-oriented logic using x86 instructions.
 
 📄 **Assignment repository:** (https://gitlab.cs.pub.ro/iocla/tema-2-2025)  
