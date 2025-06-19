@@ -1,7 +1,7 @@
 Assembly-based solutions to low-level computing problems, designed to deepen understanding of memory access, bitwise manipulation, control flow, and performance-oriented logic using x86 instructions.
 
 📄 **Assignment repository:** (https://gitlab.cs.pub.ro/iocla/tema-2-2025)  
-👨‍💻 **Author:** Theodor Vulpe – 315CB
+👨‍💻 **Author:** Theodor Vulpe – Student @ Faculty of Automatic Control and Computer Science, UPB
 
 ---
 
